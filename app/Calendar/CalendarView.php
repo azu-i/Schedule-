@@ -3,33 +3,26 @@ namespace App\Calendar;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Carbon\CarbonImmutable;
 
 class CalendarView {
     
     protected function getWeeks(){
 		$weeks = [];
 
-		//初日
 		$firstDay = $this->carbon->copy()->firstOfMonth();
 
-		//月末まで
 		$lastDay = $this->carbon->copy()->lastOfMonth();
 
-		//1週目
 		$week = new CalendarWeek($firstDay->copy());
 		$weeks[] = $week;
 
-		//作業用の日
 		$tmpDay = $firstDay->copy()->addDay(7)->startOfWeek();
 
-		//月末までループさせる
 		while($tmpDay->lte($lastDay)){
-			//週カレンダーViewを作成する
+		
 			$week = new CalendarWeek($tmpDay, count($weeks));
 			$weeks[] = $week;
 			
-            //次の週=+7日する
 			$tmpDay->addDay(7);
 		}
 
@@ -41,22 +34,7 @@ class CalendarView {
 	function __construct($date){
 		$this->carbon = new Carbon($date);
 	}
-	/**
-	 * タイトル
-	 */
-	// public function getTitle(){
-	// 	return $this->carbon->format('Y年n月');
-	
-	function dates($month)
-    {
-        $dates = [];
 
-        $last = date('w', strtotime("first day of $month"));
-
-        for (; 0 <= $last - 1; $last -= 1) {
-            $dates[] = new Carbon("$month -$lastDay day");
-        }
-    }
 	
 	public function showCalendar(Request $request, $month)
     {

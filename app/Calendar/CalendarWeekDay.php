@@ -13,9 +13,7 @@ class CalendarWeekDay {
 		return "day-" . strtolower($this->carbon->format("D"));
 	}
 
-	/**
-	 * @return 
-	 */
+
 	function render(){
 		return '<p class="day">' . $this->carbon->format("j"). '</p>';
 	}

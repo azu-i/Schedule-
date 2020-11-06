@@ -19,7 +19,7 @@
         </head>
         <body>
             <div id="app">
-                  <nav class="navbar fixed-top navbar-dark bg-dark">
+                  <nav class="navbar fixed-top navbar-dark bg-dark navbar-laravel">
                     <div class="container-fluid">
                         <!-- 2.ヘッダ情報 -->
                         <div class="navbar-header">

@@ -10,12 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('home','homeController@home')->middleware('auth');
+Route::get('/pareja','homeController@home')->middleware('auth');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'CalendarController@show')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

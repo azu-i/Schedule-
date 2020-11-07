@@ -10,22 +10,16 @@ class CalendarView {
 		$weeks = [];
 
 		$firstDay = $this->carbon->copy()->firstOfMonth();
-
 		$lastDay = $this->carbon->copy()->lastOfMonth();
-
 		$week = new CalendarWeek($firstDay->copy());
 		$weeks[] = $week;
-
 		$tmpDay = $firstDay->copy()->addDay(7)->startOfWeek();
-
 		while($tmpDay->lte($lastDay)){
-		
 			$week = new CalendarWeek($tmpDay, count($weeks));
 			$weeks[] = $week;
 			
 			$tmpDay->addDay(7);
 		}
-
 		return $weeks;
 	}
 

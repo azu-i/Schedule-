@@ -15,11 +15,14 @@ class CalendarController extends Controller
 		// $carbon = new Carbon();
 		
 		$carbon = Carbon::now();
-	
+	    $back = $carbon->addMonths(-1);
+	    $next = $carbon->addMonths(1);
+	    
 		return view('home/home',[
 			'calendar' => $calendar,
-			'carbon' => $carbon
-			
+			'carbon' => $carbon,
+			'back' => $back,
+			'next' => $next
 		]);
     }
 }

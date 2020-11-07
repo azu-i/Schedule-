@@ -14,8 +14,8 @@ class CalendarController extends Controller
 		$calendar = new CalendarView(time());
 		// $carbon = new Carbon();
 		
-		$carbon = new Carbon();
-
+		$carbon = Carbon::now();
+	
 		return view('home/home',[
 			'calendar' => $calendar,
 			'carbon' => $carbon

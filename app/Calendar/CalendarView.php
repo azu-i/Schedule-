@@ -52,7 +52,7 @@ class CalendarView {
 	function render(){
 		$html = [];
 		$html[] = '<div class="calendar">';
-		$html[] = '<table class="table">';
+		$html[] = '<table class="table table-bordered"　width = "80%">';
 		$html[] = '<thead>';
 		$html[] = '<tr>';
 		$html[] = '<th>Mon</th>';

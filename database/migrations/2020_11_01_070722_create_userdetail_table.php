@@ -17,7 +17,7 @@ class CreateUserdetailTable extends Migration
             $table->bigIncrements('id');
             $table->bigIncrements('user_id');
             $table->string('user_image_path');
-            $table->string('user_birthday');
+            $table->date('user_birthday');
             $table->timestamps();
         });
     }

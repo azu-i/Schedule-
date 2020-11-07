@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Calendar\CalendarView;
 use Carbon\Carbon;
+use Carbon\CarbonImmutable;
 
 class CalendarController extends Controller
 {
@@ -12,11 +13,11 @@ class CalendarController extends Controller
     public function show(){
 		
 		$calendar = new CalendarView(time());
-		$current_month = date('Y-m-t');
+		$month = new CarbonImmutable($month);
 
 		return view('home/home',[
 			'calendar' => $calendar,
-			'current_month' => $current_month
+			'month' => $month
 			
 		]);
     }

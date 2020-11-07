@@ -34,21 +34,15 @@ class CalendarView {
 	function __construct($date){
 		$this->carbon = new Carbon($date);
 	}
-
 	
-	public function showCalendar(Request $request, $month)
-    {
-        $calendar = calendar($section, $patient, $month);
-        $month = new Carbon($month);
-        return view('home/home', compact( 'calendar', 'month'));
-		
-    }
+	
     
    
      function calendar($month)
     {
         $dates = dates($month);
         $week = [];
+        $current_month = date('Y-m-t');
 
         for ($i = 0; $i < count($dates); $i += 7) {
             $week = [];

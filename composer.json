@@ -60,9 +60,9 @@
             "@php artisan key:generate --ansi"
         ]
     }
-    {
+    // {
     "require": {
         "nesbot/carbon": "^1.33"
+//   } 
     }
-}
 }

@@ -13,10 +13,10 @@ class CreateUserdetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('userdetail', function (Blueprint $table) {
+        Schema::create('user_detail', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('user_id');
-            $table->string('user_image_path');
+            $table->integer('user_id');
+            $table->string('image_path');
             $table->date('user_birthday');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateUserdetailTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userdetail');
+        Schema::dropIfExists('user_detail');
     }
 }

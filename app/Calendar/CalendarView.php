@@ -5,6 +5,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CalendarView {
+	
     
     protected function getWeeks(){
 		$weeks = [];
@@ -25,8 +26,10 @@ class CalendarView {
 
 	private $carbon;
 
-	function __construct($date){
-		$this->carbon = new Carbon($date);
+	public function __construct($now)
+	{
+		
+		$this->carbon = (empty($now)) ? new Carbon : $now;
 	}
 	
 	
@@ -36,8 +39,7 @@ class CalendarView {
     {
         $dates = dates($month);
         $week = [];
-        $current_month = date('Y-m-t');
-
+        
         for ($i = 0; $i < count($dates); $i += 7) {
             $week = [];
             foreach (array_slice($dates, $i,7) as $date) {
@@ -47,7 +49,6 @@ class CalendarView {
         }
     }
 
-    
 
 	function render(){
 		$html = [];
@@ -57,8 +58,8 @@ class CalendarView {
 		$html[] = '<tr>';
 		$html[] = '<th>Mon</th>';
 		$html[] = '<th>Tue</th>';
-		$html[] = '<th>Wes</th>';
-		$html[] = '<th>Thr</th>';
+		$html[] = '<th>Wed</th>';
+		$html[] = '<th>Thu</th>';
 		$html[] = '<th>Fri</th>';
 		$html[] = '<th>Sat</th>';
         $html[] = '<th>Sun</th>';
@@ -83,6 +84,5 @@ class CalendarView {
 		$html[] = '</div>';
 		return implode("", $html);
 	}
-
-
+    
 }

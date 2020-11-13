@@ -16,9 +16,9 @@ class CreatePlanTable extends Migration
         Schema::create('plan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('event_name'); 
-            $table->date('date');
-            $table->time('time');
-            $table->string('memo');
+            $table->date('day');
+            $table->time('time')->nullable();;
+            $table->string('detail')->nullable();;
             $table->string('image_path');
             $table->timestamps();
         });

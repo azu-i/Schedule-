@@ -13,6 +13,13 @@
 Route::get('/pareja','homeController@home')->middleware('auth');
 
 Route::get('/', 'CalendarController@show')->middleware('auth');
+
+
+Route::get('/plan','PlanController@getPlan')->middleware('auth');
+Route::post('/plan','PlanController@postPlan')->middleware('auth');
+
+Route::post('/detail','DetailsController@detailpost')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -9,9 +9,7 @@
             
             <script src="{{secure_asset('js/app.js') }}" defer></script>
             <link rel="stylesheet" type="text/css" href="../bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css">
-            <script type="text/javascript" src="../bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
-            <script type="text/javascript" src="../bootstrap-datepicker-1.6.4-dist/locales/bootstrap-datepicker.ja.min.js"></script>
-
+            <script src="@yield('js')"></script>
              <!-- Fonts -->
              <link rel="dns-prefetch" href="https://fonts.gstatic.com">
              <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">

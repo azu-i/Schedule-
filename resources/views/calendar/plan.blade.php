@@ -22,18 +22,7 @@
                     <label class="col-md-2">予定名　※</label>
                     
                     <div  class="col-md-10">
-                        <script src="bootstrap-select.js"></script>
-                            <select id="event_name" class="col-md-10">
-                              <option data-thumbnail="path/to/cake.jpeg">誕生日</option>
-                              <option data-thumbnail="path/to/food.jpeg">食事会</option>
-                              <option data-thumbnail="path/to/hairsalon.jpeg">美容院</option>
-                              <option data-thumbnail="path/to/beer.jpeg">飲み会</option>
-                              <option data-thumbnail="path/to/calendar.jpeg">その他</option>
-                            </select>
-                            
-                            <script>
-                              $("#my-select").selectpicker();
-                            </script>
+                        <input type="text" class="form-control" name="event_name">
                     </div>
                 </div>
                 <div class="form-group row">

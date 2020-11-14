@@ -3,7 +3,6 @@
 
 @section('title','home')
 
-
 @section('content')
 <div class = "container mt-5">
    <div class = "row justify-content-center">
@@ -13,7 +12,7 @@
                 <table class="table" width="100%">
                     <tr>
                         <td colspan="2">
-                            <a class="btn btn-secondary" href="{{ action("CalendarController@show", ['year' => $prevYear, 'month' => $prevMonth]) }}">Previous</a>
+                            <a id="p" class="btn btn-secondary" href="{{ action("CalendarController@show", ['year' => $prevYear, 'month' => $prevMonth]) }}">Previous</a>
                         </td>
                         <th colspan="3">
                             <div class="text-center">
@@ -35,4 +34,5 @@
        </div>
    </div>
 </div>
+
 @endsection

@@ -29,6 +29,7 @@
                <table class = "table table-bordered w-80">
 					{!!$calendar->render()!!}
                </table>
+               
                <a href="{{ url('/plan') }}">予定設定</a>
            </div>
        </div>
